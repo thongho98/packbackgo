@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Trang chủ</title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/img/core-img/favicon.ico}">
+
+    <!-- Core Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link th:href="@{/css/responsive/responsive.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div th:replace="fragments/header :: header"></div>
+
+    <!-- ***** Welcome Area Start ***** -->
+
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="hero-content">
+                        <h2>Discover places near you</h2>
+                        <h4>This is the best guide of your city</h4>
+                    </div>
+                    <!-- Hero Search Form -->
+                    <div class="hero-search-form">
+                        <!-- Tabs -->
+                        <div class="nav nav-tabs" id="heroTab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places" role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
+                            <a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab" aria-controls="nav-events" aria-selected="false">Events</a>
+                        </div>
+                        <!-- Tabs Content -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
+                                <h6>What are you looking for?</h6>
+                                <form action="#" method="get">
+                                    <select class="custom-select">
+                                        <option selected>Your Destinations</option>
+                                        <option value="1">New York</option>
+                                        <option value="2">Latvia</option>
+                                        <option value="3">Dhaka</option>
+                                        <option value="4">Melbourne</option>
+                                        <option value="5">London</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>All Catagories</option>
+                                        <option value="1">Catagories 1</option>
+                                        <option value="2">Catagories 2</option>
+                                        <option value="3">Catagories 3</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>Price Range</option>
+                                        <option value="1">$100 - $499</option>
+                                        <option value="2">$500 - $999</option>
+                                        <option value="3">$1000 - $4999</option>
+                                    </select>
+                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
+                                <h6>What are you looking for?</h6>
+                                <form action="#" method="get">
+                                    <select class="custom-select">
+                                        <option selected>Your Destinations</option>
+                                        <option value="1">New York</option>
+                                        <option value="2">Latvia</option>
+                                        <option value="3">Dhaka</option>
+                                        <option value="4">Melbourne</option>
+                                        <option value="5">London</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>All Catagories</option>
+                                        <option value="1">Catagories 1</option>
+                                        <option value="2">Catagories 2</option>
+                                        <option value="3">Catagories 3</option>
+                                    </select>
+                                    <select class="custom-select">
+                                        <option selected>Price Range</option>
+                                        <option value="1">$100 - $499</option>
+                                        <option value="2">$500 - $999</option>
+                                        <option value="3">$1000 - $4999</option>
+                                    </select>
+                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Social Btn -->
+        <div class="hero-social-btn">
+            <div class="social-title d-flex align-items-center">
+                <h6>Follow us on Social Media</h6>
+                <span></span>
+            </div>
+            <div class="social-btns">
+                <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
+                <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Welcome Area End ***** -->
+
+    <!-- ***** Catagory Area Start ***** -->
+    <section class="dorne-catagory-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="all-catagories">
+                        <div class="row">
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s">
+                                    <div class="catagory-content">
+                                        <img th:src="@{/img/core-img/icon-1.png}" alt="">
+                                        <a href="#">
+                                            <h6>Hotels</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s">
+                                    <div class="catagory-content">
+                                        <img th:src="@{/img/core-img/icon-2.png}" alt="">
+                                        <a href="#">
+                                            <h6>Restaurants</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s">
+                                    <div class="catagory-content">
+                                        <img th:src="@{/img/core-img/icon-3.png}" alt="">
+                                        <a href="#">
+                                            <h6>Shopping</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.8s">
+                                    <div class="catagory-content">
+                                        <img th:src="@{/img/core-img/icon-4.png}" alt="">
+                                        <a href="#">
+                                            <h6>Beauty &amp; Spa</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-md">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1s">
+                                    <div class="catagory-content">
+                                        <img th:src="@{/img/core-img/icon-5.png}" alt="">
+                                        <a href="#">
+                                            <h6>Cinema</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Catagory Area End ***** -->
+
+    <!-- ***** About Area Start ***** -->
+    <section class="dorne-about-area section-padding-0-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-content text-center">
+                        <h2>Địa điểm du lịch cùng<br><span>Packbackgo</span></h2>
+                        <p>Những chuyến đi độc đáo và chi tiết được tạo ra từ bản sắc của các Packbackgoer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Area End ***** -->
+
+    <!-- ***** Editor Pick Area Start ***** -->
+    <section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100" style="background-image: url(img/bg-img/hero-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <span></span>
+                        <h4>Điểm đến nổi bật</h4>
+                        <p>Editor’s pick</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.2s">
+                        <img th:src="@{/img/bg-img/editor-1.jpg}" alt="">
+                        <div class="editors-pick-info">
+                            <div class="places-total-destinations d-flex">
+                                <a href="#">New York</a>
+                                <a href="#">1643 Destinations</a>
+                            </div>
+                            <div class="add-more">
+                                <a href="#">+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="img/bg-img/editor-2.jpg" alt="">
+                        <div class="editors-pick-info">
+                            <div class="places-total-destinations d-flex">
+                                <a href="#">Barcelona</a>
+                                <a href="#">943 Destinations</a>
+                            </div>
+                            <div class="add-more">
+                                <a href="#">+</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.6s">
+                        <img th:src="@{/img/bg-img/editor-3.jpg}" alt="">
+                        <div class="editors-pick-info">
+                            <div class="places-total-destinations d-flex">
+                                <a href="#">paris</a>
+                                <a href="#">243 Destinations</a>
+                            </div>
+                            <div class="add-more">
+                                <a href="#">+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Editor Pick Area End ***** -->
+
+    <!-- ***** Features Restaurant Area Start ***** -->
+    <section class="dorne-features-destinations-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading dark text-center">
+                        <span></span>
+                        <h4>Hành trình du lịch</h4>
+                        <p>Editor’s pick</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="features-slides owl-carousel">
+                        <!-- Single Features Area -->
+
+                        <div class="single-features-area" th:each="p : ${listPost}">
+                            <img th:src="@{/img/bg-img/feature-6.jpg}" alt="">
+                            <!-- Rating & Map Area -->
+                            <div class="ratings-map-area d-flex">
+                                <a href="#">8.5</a>
+                                <a href="#"><img th:src="@{/img/core-img/map.png}" alt=""></a>
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <h5 th:text="${p.title}"></h5>
+                                    <p th:text="${p.tags}"></p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Restaurant Area End ***** -->
+
+    <!-- ***** Features Events Area Start ***** -->
+    <section class="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50" style="background-image: url(img/bg-img/hero-3.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <span></span>
+                        <h4>Sự kiện sắp tới</h4>
+                        <p>Editor’s pick</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.2s">
+                        <div class="feature-events-thumb">
+                            <img th:src="@{/img/bg-img/event-1.jpg}" alt="">
+                            <div class="date-map-area d-flex">
+                                <a href="#">26 Nov</a>
+                                <a href="#"><img th:src="@{/img/core-img/map.png}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="feature-events-content">
+                            <h5>Jazz Concert</h5>
+                            <h6>Manhathan</h6>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                        </div>
+                        <div class="feature-events-details-btn">
+                            <a href="#">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.3s">
+                        <div class="feature-events-thumb">
+                            <img th:src="@{/img/bg-img/event-2.jpg}" alt="">
+                            <div class="date-map-area d-flex">
+                                <a href="#">26 Nov</a>
+                                <a href="#"><img th:src="@{/img/core-img/map.png}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="feature-events-content">
+                            <h5>DeeJay in the house</h5>
+                            <h6>Manhathan</h6>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                        </div>
+                        <div class="feature-events-details-btn">
+                            <a href="#">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.4s">
+                        <div class="feature-events-thumb">
+                            <img th:src="@{/img/bg-img/event-3.jpg}" alt="">
+                            <div class="date-map-area d-flex">
+                                <a href="#">26 Nov</a>
+                                <a href="#"><img th:src="@{/img/core-img/map.png}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="feature-events-content">
+                            <h5>Theatre Night outside</h5>
+                            <h6>Manhathan</h6>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                        </div>
+                        <div class="feature-events-details-btn">
+                            <a href="#">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.5s">
+                        <div class="feature-events-thumb">
+                            <img th:src="@{/img/bg-img/event-4.jpg}" alt="">
+                            <div class="date-map-area d-flex">
+                                <a href="#">26 Nov</a>
+                                <a href="#"><img th:src="@{/img/core-img/map.png}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="feature-events-content">
+                            <h5>Wine tasting</h5>
+                            <h6>Manhathan</h6>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                        </div>
+                        <div class="feature-events-details-btn">
+                            <a href="#">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.6s">
+                        <div class="feature-events-thumb">
+                            <img th:src="@{/img/bg-img/event-5.jpg}" alt="">
+                            <div class="date-map-area d-flex">
+                                <a href="#">26 Nov</a>
+                                <a href="#"><img th:src="@{/img/core-img/map.png}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="feature-events-content">
+                            <h5>New Moon Party</h5>
+                            <h6>Manhathan</h6>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                        </div>
+                        <div class="feature-events-details-btn">
+                            <a href="#">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.7s">
+                        <div class="feature-events-thumb">
+                            <img th:src="@{/img/bg-img/event-6.jpg}" alt="">
+                            <div class="date-map-area d-flex">
+                                <a href="#">26 Nov</a>
+                                <a href="#"><img th:src="@{/img/core-img/map.png}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="feature-events-content">
+                            <h5>Happy hour at pub</h5>
+                            <h6>Manhathan</h6>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                        </div>
+                        <div class="feature-events-details-btn">
+                            <a href="#">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Events Area End ***** -->
+
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

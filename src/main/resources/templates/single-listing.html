@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Chi tiết hành trình</title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{img/core-img/favicon.ico}">
+
+    <!-- Core Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link th:href="@{/css/responsive/responsive.css}" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- ***** Breadcumb Area Start ***** -->
+<div class="breadcumb-area height-700 bg-img bg-overlay"
+     th:style="'background-image: url(' + @{/img/bg-img/breadcumb.jpg} +');'">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <div class="map-ratings-review-area d-flex">
+                        <a href="#" class="d-flex align-items-center justify-content-center"><img
+                                th:src="@{/img/core-img/map.png}" alt=""></a>
+                        <a href="#">8.7</a>
+                        <a href="#">Write a review</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Breadcumb Area End ***** -->
+
+<!-- ***** Single Listing Area Start ***** -->
+<section class="dorne-single-listing-area section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center" th:object="${post}">
+            <!-- Single Listing Content -->
+            <div class="col-12 col-lg-8">
+                <div class="single-listing-content">
+
+                    <div class="listing-title">
+                        <h4 th:text="${post.title}"></h4>
+                        <h6 th:text="${post.tags}"></h6>
+                    </div>
+
+                    <div class="single-listing-nav">
+                        <nav>
+                            <ul id="listingNav">
+                                <li class="active"><a href="#overview">Overview</a></li>
+                                <li><a href="#review">Reviews</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="overview-content mt-50" id="overview">
+                        <p th:text="${post.content}"></p>
+                    </div>
+
+                    <div>
+                        <div class="contact-form">
+                            <form th:action="@{/comment/(id=${post.id})}" th:method="post" th:object="${comment}">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <textarea name="contents" class="form-control" id="contents" cols="30" rows="10"
+                                                  placeholder="Bạn nghĩ gì về tin này?"
+                                                  th:field="*{content}"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn dorne-btn" id="btnComment">Ý kiến của bạn
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listing-reviews-area mt-100" id="review">
+                    <h4>Bình luận</h4>
+                    <div class="single-review-area" th:each="c : ${post.getComments()}">
+                        <div class="reviewer-meta d-flex align-items-center">
+                            <img th:src="@{/img/clients-img/1.jpg}" alt="">
+                            <div class="reviewer-content">
+                                <div class="review-title-ratings d-flex justify-content-between">
+                                    <h5>Đánh giá </h5>
+                                    <div class="ratings">
+                                        <img th:src="@{/img/clients-img/star-fill.png}" alt="">
+                                        <img th:src="@{/img/clients-img/star-fill.png}" alt="">
+                                        <img th:src="@{/img/clients-img/star-fill.png}" alt="">
+                                        <img th:src="@{/img/clients-img/star-fill.png}" alt="">
+                                        <img th:src="@{/img/clients-img/star-unfill.png}" alt="">
+                                    </div>
+                                </div>
+                                <p th:text="${c.content}"></p>
+                            </div>
+                        </div>
+                        <div class="reviewer-name">
+                            <p th:text="${c.date_created}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- ***** Single Listing Area End ***** -->
+
+<!-- ****** Footer Area Start ****** -->
+<footer class="dorne-footer-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-md-flex align-items-center justify-content-between">
+                <div class="footer-text">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                            aria-hidden="true"></i> by <a
+                            href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+                <div class="footer-social-btns">
+                    <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+                    <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ****** Footer Area End ****** -->
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

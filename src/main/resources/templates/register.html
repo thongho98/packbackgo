@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Đăng ký</title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/img/core-img/favicon.ico}">
+
+    <!-- Core Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link th:href="@{/css/responsive/responsive.css}" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- ***** Breadcumb Area Start ***** -->
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
+<!-- ***** Breadcumb Area End ***** -->
+
+<!-- ***** Contact Area Start ***** -->
+<div class="dorne-contact-area d-md-flex" id="contact">
+    <!-- Map Area -->
+    <div class="dorne-map-area equal-height">
+        <img th:src="@{/img/bg-img/feature-2.jpg}" alt="">
+    </div>
+    <!-- Contact Form Area -->
+    <div class="contact-form-area equal-height">
+        <div class="contact-form">
+            <div class="contact-form-title">
+                <h6>ĐĂNG KÝ</h6>
+            </div>
+            <!--/*@thymesVar id="newUser" type=""*/-->
+            <form th:action="@{/register}" th:method="post" th:object="${newUser}">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="username" class="form-control" placeholder="Username"
+                               th:field="*{username}"/>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="text" name="fname" class="form-control" placeholder="First Name"
+                               th:field="*{firstname}"/>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="text" name="lname" class="form-control" placeholder="Last Name"
+                               th:field="*{lastname}"/>
+                    </div>
+                    <div class="col-12">
+                        <input type="email" name="email" class="form-control" placeholder="Email" th:field="*{email}"/>
+                    </div>
+                    <div class="col-12">
+                        <input type="password" name="password" class="form-control" placeholder="Password"
+                               th:field="*{password}"/>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn dorne-btn">Đăng ký</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- ***** Contact Area End ***** -->
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

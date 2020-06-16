@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Hành trình du dịch </title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/img/core-img/favicon.ico}">
+
+    <!-- Core Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link th:href="@{/css/responsive/responsive.css}" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- ***** Breadcumb Area Start ***** -->
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
+<!-- ***** Breadcumb Area End ***** -->
+
+<!-- ***** Listing Destinations Area Start ***** -->
+<section class="dorne-listing-destinations-area section-padding-100-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading dark text-center">
+                    <span></span>
+                    <h4>Hành trình du lịch</h4>
+                    <p>Editor’s pick</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Single Features Area -->
+
+            <div class="col-12 col-sm-6 col-lg-4" th:each="p : ${listPost}">
+                <div class="single-features-area mb-50">
+                    <img src="img/bg-img/feature-1.jpg" alt="">
+                    <!-- Price -->
+                    <div class="price-start">
+                        <p>FROM $59/night</p>
+                    </div>
+                    <div class="feature-content d-flex align-items-center justify-content-between">
+                        <div class="feature-title">
+                            <h5 th:text="${p.title}"></h5>
+                            <p th:text="${p.tags}"></p>
+                        </div>
+                        <div class="feature-favourite">
+                            <a th:href="@{listing/(id=${p.id})}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Listing Destinations Area End ***** -->
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

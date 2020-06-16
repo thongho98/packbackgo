@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Dorne - Directory &amp; Listing Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/img/core-img/favicon.ico}">
+
+    <!-- Core Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link th:href="@{/css/responsive/responsive.css}" rel="stylesheet">
+
+</head>
+
+<body th:fragment="header">
+<!-- Preloader -->
+<div id="preloader">
+    <div class="dorne-load"></div>
+</div>
+
+<!-- ***** Search Form Area ***** -->
+<div class="dorne-search-form d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="search-close-btn" id="closeBtn">
+                    <i class="pe-7s-close-circle" aria-hidden="true"></i>
+                </div>
+                <form th:action="@{/search}" th:method="get" class="form-inline" th:object="${newSearch}">
+                    <select class="custom-select form-control" id="inputGroupSelect01" th:field="*{on}" />
+                        <option th:value="'tags'" th:text="'Thẻ tag'" value=""></option>
+                        <option th:value="'title'" th:text="'Tiêu đề'" value=""></option>
+                        <option th:value="'content'" th:text="'Nội dung'" value=""></option>
+                    </select>
+                    <input type="search" class="form-control col-8" name="q" id="search" placeholder="Tìm kiếm địa điểm hoặc sự kiện" th:field="*{q}">
+                    <input type="submit" class="d-none form-control" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header_area" id="header">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-12 h-100">
+                <nav class="h-100 navbar navbar-expand-lg">
+                    <a class="navbar-brand" th:href="@{/index}"><img th:src="@{/img/core-img/logo.png}" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+                    <!-- Nav -->
+                    <div class="collapse navbar-collapse" id="dorneNav">
+                        <ul class="navbar-nav mr-auto" id="dorneMenu">
+                            <li class="nav-item active">
+                                <a class="nav-link" th:href="@{/index}">Trang chủ <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Khám phá <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" th:href="@{#}">Địa điểm nổi tiếng</a>
+                                    <a class="dropdown-item" th:href="@{#}">Hành trình nổi bật</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" th:href="@{/listing}" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                    <a class="dropdown-item" th:href="@{/listing}">Địa điểm yêu thích</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/contact}">Kết nối</a>
+                            </li>
+                        </ul>
+                        <!-- Search btn -->
+                        <div class="dorne-search-btn">
+                            <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i> Tìm kiếm</a>
+                        </div>
+
+                        <div class="dorne-signin-btn">
+                            <a th:if="${session.usersession == null}" th:href="@{/register}">Đăng ký</a>
+                            <a th:unless="${session.usersession == null}" th:href="@{#}" >Quản lí bài viết</a>
+                        </div>
+                        <div class="dorne-signin-btn">
+                            <a th:if="${session.usersession == null}" th:href="@{/login}">Đăng nhập</a>
+                            <a th:unless="${session.usersession == null}" th:href="@{/logout}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </div>
+                        <!-- Add listings btn -->
+                        <div class="dorne-add-listings-btn">
+                            <a th:href="@{/post}" class="btn dorne-btn">+ Thêm bài mới</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+<!-- jQuery-2.2.4 js -->
+<script th:src="@{/js/jquery/jquery-2.2.4.min.js}"></script>
+<!-- Popper js -->
+<script th:src="@{/js/bootstrap/popper.min.js}"></script>
+<!-- Bootstrap-4 js -->
+<script th:src="@{/js/bootstrap/bootstrap.min.js}"></script>
+<!-- All Plugins js -->
+<script th:src="@{/js/others/plugins.js}"></script>
+<!-- Active JS -->
+<script th:src="@{/js/active.js}"></script>
+</body>
+</html>

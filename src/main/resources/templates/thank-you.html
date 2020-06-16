@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Cảm ơn</title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/img/core-img/favicon.ico}">
+
+    <!-- Core Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link th:href="@{/css/responsive/responsive.css}" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- ***** Breadcumb Area Start ***** -->
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
+<!-- ***** Breadcumb Area End ***** -->
+
+
+<!-- ***** Contact Area Start ***** -->
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-5 text-center">
+                <i class="fa fa-check-circle fa-5x text-success"></i>
+                <h2 class="display-3 text-black">Chúc mừng!</h2>
+                <p class="lead">Bạn đã đăng kí thành công thành công.</p>
+                <p class="lead mb-5">Vui lòng check mail để được đăng nhập!</p>
+                <p><a th:href="@{login}" class="btn btn-sm btn-primary">Đăng nhập ngay</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

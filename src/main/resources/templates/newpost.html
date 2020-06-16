@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Bài viết mới</title>
+
+    <!-- Favicon -->
+    <link rel="icon" th:href="@{/img/core-img/favicon.ico}">
+
+    <!-- Core Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link th:href="@{/css/responsive/responsive.css}" rel="stylesheet">
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<!-- ***** Breadcumb Area Start ***** -->
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
+<!-- ***** Breadcumb Area End ***** -->
+
+
+<!-- ***** Contact Area Start ***** -->
+<div class="dorne-contact-area container mt-3" id="contact">
+    <!-- Contact Form Area -->
+    <div>
+        <div class="contact-form">
+            <div class="contact-form-title">
+                <h6>Bài viết mới</h6>
+            </div>
+            <form th:action="@{/post}" th:method="post" th:object="${newPost}">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="title" class="form-control" placeholder="Tiêu đề" th:field="*{title}">
+                    </div>
+                    <div class="col-12">
+                        <textarea name="contents" class="form-control" id="contents" cols="30" rows="10"
+                                  placeholder="Nội dung" th:field="*{content}"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <input type="text" name="tags" class="form-control" placeholder="Thẻ tags" th:field="*{tags}">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" name="image_url" class="form-control" placeholder="Ảnh"
+                               th:field="*{image_url}">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn dorne-btn">Tạo bài viết</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- ***** Contact Area End ***** -->
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>
