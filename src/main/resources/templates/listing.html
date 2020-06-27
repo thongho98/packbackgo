@@ -45,11 +45,7 @@
 
             <div class="col-12 col-sm-6 col-lg-4" th:each="p : ${listPost}">
                 <div class="single-features-area mb-50">
-                    <img src="img/bg-img/feature-1.jpg" alt="">
-                    <!-- Price -->
-                    <div class="price-start">
-                        <p>FROM $59/night</p>
-                    </div>
+                    <img th:src="${p.image_url}" alt="">
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
                             <h5 th:text="${p.title}"></h5>
